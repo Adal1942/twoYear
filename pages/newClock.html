@@ -4,13 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novo relógio</title>
+    <title>Dois Anos</title>
     <link rel="stylesheet" href="../styles/newClock.css">
 </head>
 <body>
-    <div class="container">        
-        <div class="clock">
+    <div class="container">
+        
+        <!-- inverted counter -->
 
+        <div id="time">
+            <div id="days" style="--clr: #ffffff;">00</div>
+            <div id="hour" style="--clr: #f40752;">00</div>
+            <div id="minute" style="--clr: #26c5f3;">00</div>
+            <div id="second" style="--clr: #b330e1;">00</div>
+        </div>
+        
+        <div class="clock">
             <div class="circle" style="--clr: #b330e1;" id="sc"><i></i></div>
             <div class="circle circle2" style="--clr: #26c5f3;" id="mn"><i></i></div>
             <div class="circle circle3" style="--clr: #f40752;" id="hr"><i></i></div>
@@ -30,7 +39,7 @@
         </div>
 
         <!-- digital clock -->
-        <div id="time">
+        <div id="time2">
             <div id="hours" style="--clr:#f40752;">00</div>
             <div id="minutes" style="--clr:#26c5f3;">00</div>
             <div id="seconds" style="--clr:#b330e1;">00</div>
@@ -38,51 +47,6 @@
         </div>
     </div>
 
-    <script>
-        let hr = document.querySelector('#hr');
-        let mn = document.querySelector('#mn');
-        let sc = document.querySelector('#sc');
-
-        setInterval(() => {
-            let day = new Date();
-            let hh = day.getHours() * 30;
-            let mm = day.getMinutes() * 6;
-            let ss = day.getSeconds() * 6;
-
-            hr.style.transform = `rotateZ(${hh+(mm/12)}deg)`;
-            mn.style.transform = `rotateZ(${mm}deg)`;
-            sc.style.transform = `rotateZ(${ss}deg)`;
-
-            // Digital clock
-
-            let hours = document.getElementById('hours');
-            let minutes = document.getElementById('minutes');
-            let seconds = document.getElementById('seconds');
-            let ampm = document.getElementById('ampm');
-
-            let h = new Date().getHours();
-            let m = new Date().getMinutes();
-            let s = new Date().getSeconds();
-
-            let am = h >= 12 ? "PM" : "AM";
-
-            // convert 24hr clock to 12hr clock
-            if ( h > 12){
-                h = h - 12;
-            }
-
-            //add zero before single digit number
-            h = (h < 10) ? "0" + h : h;
-            m = (m < 10) ? "0" + m : m;
-            s = (s < 10) ? "0" + s : s;
-
-            hours.innerHTML = h;
-            minutes.innerHTML = m;
-            seconds.innerHTML = s;
-            ampm.innerHTML = am;
-        });
-
-        
-    </script>
+    <script src="../js/twoYears.js"></script>
 </body>
 </html>

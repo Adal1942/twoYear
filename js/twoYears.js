@@ -3,11 +3,6 @@ let hour = document.getElementById('hour');
 let minute = document.getElementById('minute');
 let second = document.getElementById('second');
 
-let dd = document.getElementById('dd');
-let hh = document.getElementById('hh');
-let mm = document.getElementById('mm');
-let ss = document.getElementById('ss');
-
 let endDate = '04/25/2023 12:00:00'; // date format mm/dd/yyyy
 
 let x = setInterval(function(){
@@ -34,13 +29,6 @@ let x = setInterval(function(){
     hour.innerHTML = h ;
     minute.innerHTML = m;
     second.innerHTML = s;
-
-    // animate stroke
-
-    dd.style.strokeDashoffset = 440 - (440 * d) / 365; // 365 days in an year;
-    hh.style.strokeDashoffset = 440 - (440 * h) / 24; // 24 hours in a day;
-    mm.style.strokeDashoffset = 440 - (440 * m) / 60; // 60 minutes in an hours;
-    ss.style.strokeDashoffset = 440 - (440 * s) / 60; // 60 seconds in a minute;
 
     // if the count os over, write some text
 

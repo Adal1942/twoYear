@@ -39,47 +39,47 @@ let x = setInterval(function(){
     }
 });
 
-        // regular watch - time2
+// regular watch - time2
 
-        let hr = document.querySelector('#hr');
-        let mn = document.querySelector('#mn');
-        let sc = document.querySelector('#sc');
+let hr = document.querySelector('#hr');
+let mn = document.querySelector('#mn');
+let sc = document.querySelector('#sc');
 
-        setInterval(() => {
-            let day = new Date();
-            let hh = day.getHours() * 30;
-            let mm = day.getMinutes() * 6;
-            let ss = day.getSeconds() * 6;
+setInterval(() => {
+    let day = new Date();
+    let hh = day.getHours() * 30;
+    let mm = day.getMinutes() * 6;
+    let ss = day.getSeconds() * 6;
 
-            hr.style.transform = `rotateZ(${hh+(mm/12)}deg)`;
-            mn.style.transform = `rotateZ(${mm}deg)`;
-            sc.style.transform = `rotateZ(${ss}deg)`;
+    hr.style.transform = `rotateZ(${hh+(mm/12)}deg)`;
+    mn.style.transform = `rotateZ(${mm}deg)`;
+    sc.style.transform = `rotateZ(${ss}deg)`;
 
-            // Digital clock
+    // Digital clock
 
-            let hours = document.getElementById('hours');
-            let minutes = document.getElementById('minutes');
-            let seconds = document.getElementById('seconds');
-            let ampm = document.getElementById('ampm');
+    let hours = document.getElementById('hours');
+    let minutes = document.getElementById('minutes');
+    let seconds = document.getElementById('seconds');
+    let ampm = document.getElementById('ampm');
 
-            let h_2 = new Date().getHours();
-            let m_2 = new Date().getMinutes();
-            let s_2 = new Date().getSeconds();
+    let h_2 = new Date().getHours();
+    let m_2 = new Date().getMinutes();
+    let s_2 = new Date().getSeconds();
 
-            let am = h_2 >= 12 ? "PM" : "AM";
+    let am = h_2 >= 12 ? "PM" : "AM";
 
-            // convert 24hr clock to 12hr clock
-            if ( h_2 > 12){
-                h_2 = h_2 - 12;
-            }
+    // convert 24hr clock to 12hr clock
+    if ( h_2 > 12){
+        h_2 = h_2 - 12;
+    }
 
-            //add zero before single digit number
-            h_2 = (h_2 < 10) ? "0" + h_2 : h_2;
-            m_2 = (m_2 < 10) ? "0" + m_2 : m_2;
-            s_2 = (s_2 < 10) ? "0" + s_2 : s_2;
+    //add zero before single digit number
+    h_2 = (h_2 < 10) ? "0" + h_2 : h_2;
+    m_2 = (m_2 < 10) ? "0" + m_2 : m_2;
+    s_2 = (s_2 < 10) ? "0" + s_2 : s_2;
 
-            hours.innerHTML = h_2;
-            minutes.innerHTML = m_2;
-            seconds.innerHTML = s_2;
-            ampm.innerHTML = am;
-        });
+    hours.innerHTML = h_2;
+    minutes.innerHTML = m_2;
+    seconds.innerHTML = s_2;
+    ampm.innerHTML = am;
+});
